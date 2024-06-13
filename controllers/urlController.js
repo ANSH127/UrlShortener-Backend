@@ -28,7 +28,7 @@ const getURL = async (req, res) => {
     if (url === null) {
         return res.sendStatus(404);
     }
-    res.redirect(url.originalURL);
+    return res.json({ url: url.originalURL });
 
 
 }

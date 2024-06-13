@@ -6,7 +6,10 @@ const cors = require('cors');
 const urlRoutes = require('./routes/url');
 const mongoose = require('mongoose');
 
-app.use(cors({ origin: '*' }));
+app.use(cors({ 
+    origin: ['http://localhost:3000','https://shrnk.vercel.app'],
+
+ }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -35,6 +38,6 @@ mongoose.connect(process.env.MONGO_URI)
     });
 
 
-app.listen(4000, () => {
+app.listen(process.env.PORT||4000, () => {
     console.log('Server is running on port 4000');
 });
