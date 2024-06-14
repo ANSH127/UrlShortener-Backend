@@ -11,7 +11,8 @@ const urlSchema = new mongoose.Schema({
     },
     createdAt: {
         type: Date,
-        default: Date.now
+        default: Date.now,
+        expires:72*60*60 // 72 hours
     }
 
 });
